@@ -1,4 +1,3 @@
-# `DEPRECATED`
 
 # @sonarwatch/token-list
 
