@@ -3,7 +3,7 @@ const { expect } = require("chai");
 const listConfigs = require("../src/assets/listStaticConfigs.json");
 const formatTokenAddress = require("../src/helpers/formatTokenAddress");
 
-const networkId = "aptos";
+const networkId = "arbitrum"; 
 describe(`list ${networkId}`, () => {
   const list = require(`../build/sonarwatch.${networkId}.tokenlist.json`);
 
