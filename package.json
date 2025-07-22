@@ -9,7 +9,7 @@
     "clean": "rimraf build",
     "build": "npm-run-all clean build:list:* build:lists",
     "build:lists": "mkdirp build && node scripts/buildLists.js > build/sonarwatch.tokenlists.json",
-    "build:list:arbitrum": "mkdirp build && node scripts/buildList.js arbitrum > build/sonarwatch.arbitrum.tokenlist.json",
+    "build:list:linea": "mkdirp build && node scripts/buildList.js linea > build/sonarwatch.linea.tokenlist.json",
     "release": "release-it"
   },
   "files": [

@@ -2,11 +2,11 @@
 // const avalancheList = require("../build/sonarwatch.avalanche.tokenlist.json");
 // const bitcoinList = require("../build/sonarwatch.bitcoin.tokenlist.json");
 // const bnbList = require("../build/sonarwatch.bnb.tokenlist.json");
-const arbitrumList = require("../build/sonarwatch.arbitrum.tokenlist.json");
+// const arbitrumList = require("../build/sonarwatch.arbitrum.tokenlist.json");
 // const baseList = require("../build/sonarwatch.base.tokenlist.json");
 // const cronosList = require("../build/sonarwatch.cronos.tokenlist.json");
 // const gnosisList = require("../build/sonarwatch.gnosis.tokenlist.json");
-// const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
+const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
 // const scrollList = require("../build/sonarwatch.scroll.tokenlist.json");
 // const zksyncList = require("../build/sonarwatch.zksync.tokenlist.json");
 // const polygonZkEvmList = require("../build/sonarwatch.polygon-zkevm.tokenlist.json");
@@ -22,11 +22,11 @@ const lists = {
   // avalanche: avalancheList,
   // bitcoin: bitcoinList,
   // bnb: bnbList,
-  arbitrum: arbitrumList,
+  // arbitrum: arbitrumList,
   // base: baseList,
   // cronos: cronosList,
   // gnosis: gnosisList,
-  // linea: lineaList,
+  linea: lineaList,
   // scroll: scrollList,
   // zksync: zksyncList,
   // "polygon-zkevm": polygonZkEvmList,
