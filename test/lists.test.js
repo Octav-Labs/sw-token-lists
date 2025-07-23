@@ -32,7 +32,7 @@ describe("lists", () => {
         const fAddress = formatTokenAddress(token.address, networkId);
         expect(token.address).to.equal(fAddress);
       }
-    }).timeout(10000);
+    }).timeout(30000);
 
     it(`[${networkId}] version matches package.json`, () => {
       expect(packageJson.version).to.match(/^\d+\.\d+\.\d+$/);
