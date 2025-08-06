@@ -25,6 +25,7 @@
     "build:list:optimism": "mkdirp build && node scripts/buildList.js optimism > build/sonarwatch.optimism.tokenlist.json",
     "build:list:polygon": "mkdirp build && node scripts/buildList.js polygon > build/sonarwatch.polygon.tokenlist.json",
     "build:list:solana": "mkdirp build && node scripts/buildList.js solana > build/sonarwatch.solana.tokenlist.json",
+    "build:list:starknet": "mkdirp build && node scripts/buildList.js starknet > build/sonarwatch.starknet.tokenlist.json",
     "build:list:sui": "mkdirp build && node scripts/buildList.js sui > build/sonarwatch.sui.tokenlist.json",
     "build:list:sei": "mkdirp build && node scripts/buildList.js sei > build/sonarwatch.sei.tokenlist.json",
     "release": "release-it"

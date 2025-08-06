@@ -14,6 +14,7 @@ const platforms = {
   optimism: "optimistic-ethereum",
   polygon: "polygon-pos",
   solana: "solana",
+  starknet: "starknet",
   sui: "sui",
   sei: "sei",
 };

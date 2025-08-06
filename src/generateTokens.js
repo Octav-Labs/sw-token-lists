@@ -7,6 +7,7 @@ const getEvmTokens = require("./helpers/evm/getEvmTokens");
 const getSolanaTokens = require("./helpers/solana/getSolanaTokens");
 const getAptosTokens = require("./helpers/aptos/getAptosTokens");
 const getSuiTokens = require("./helpers/sui/getSuiTokens");
+const getStarknetTokens = require("./helpers/starknet/getStarknetTokens");
 const formatToken = require("./helpers/formatToken");
 const getTokensFromCurrentList = require("./helpers/getTokensFromCurrentList");
 
@@ -27,6 +28,7 @@ const tokenGenerators = {
   optimism: () => getEvmTokens("optimism"),
   polygon: () => getEvmTokens("polygon"),
   solana: () => getSolanaTokens(),
+  starknet: () => getStarknetTokens(),
   sui: () => getSuiTokens(),
   sei: () => seiTokens,
 };

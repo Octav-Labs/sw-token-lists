@@ -14,6 +14,7 @@ const ethereumList = require("../build/sonarwatch.ethereum.tokenlist.json");
 const optimismList = require("../build/sonarwatch.optimism.tokenlist.json");
 const polygonList = require("../build/sonarwatch.polygon.tokenlist.json");
 const solanaList = require("../build/sonarwatch.solana.tokenlist.json");
+const starknetList = require("../build/sonarwatch.starknet.tokenlist.json");
 const suiList = require("../build/sonarwatch.sui.tokenlist.json");
 const seiList = require("../build/sonarwatch.sei.tokenlist.json");
 
@@ -34,6 +35,7 @@ const lists = {
   optimism: optimismList,
   polygon: polygonList,
   solana: solanaList,
+  starknet: starknetList,
   sui: suiList,
   sei: seiList,
 };
