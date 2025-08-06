@@ -8,6 +8,7 @@ const {
   assertSeiTokenAddress,
   assertBitcoinTokenAddress,
   formatMoveAddress,
+  assertMoveAddress,
 } = require("@sonarwatch/portfolio-core");
 
 function formatTokenAddressBitcoin(address) {
@@ -41,12 +42,18 @@ function formatTokenAddressSei(address) {
   return address;
 }
 
+function formatTokenAddressStarknet(address) {
+  assertMoveAddress(address);
+  return formatMoveAddress(address);
+}
+
 const formaters = {
   move: formatTokenAddressMove,
   evm: formatTokenAddressEvm,
   solana: formatTokenAddressSolana,
   bitcoin: formatTokenAddressBitcoin,
   sei: formatTokenAddressSei,
+  starknet: formatTokenAddressStarknet,
 };
 
 module.exports = function formatTokenAddress(address, networkId) {

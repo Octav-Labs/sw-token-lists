@@ -125,6 +125,14 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_solana.png",
     "rpcEndpoint": "https://api.mainnet-beta.solana.com"
   },
+  "starknet": {
+    "id": "starknet",
+    "name": "Starknet",
+    "addressType": "starknet",
+    "chainId": 234485,
+    "logoURI": "https://assets.coingecko.com/coins/images/26433/standard/starknet.png",
+    "rpcEndpoint": "https://starknet-mainnet.public.blastapi.io"
+  },
   "sui": {
     "id": "sui",
     "name": "Sui",
