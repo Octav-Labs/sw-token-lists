@@ -41,8 +41,10 @@ module.exports = async function getEvmTokensFromCoingecko(
       continue;
     }
 
-    if (currentTokensMap.get(address) && Math.random() > 0.05) {
-      tokensByAddress.set(address, currentTokensMap.get(address));
+    const existingToken = currentTokensMap.get(address);
+
+    if (existingToken && Math.random() > 0.05) {
+      tokensByAddress.set(address, existingToken);
       continue;
     }
     if (tokensByAddress.get(address)) continue;
@@ -57,7 +59,10 @@ module.exports = async function getEvmTokensFromCoingecko(
       })
       .catch(() => null);
     await sleep(5000);
-    if (!coinDetailsResponse || !coinDetailsResponse.data) continue;
+    if (!coinDetailsResponse || !coinDetailsResponse.data) {
+        if (existingToken) tokensByAddress.set(address, existingToken);
+        continue;
+    }
     const coinDetails = coinDetailsResponse.data;
     let decimals =
       coinDetails.detail_platforms?.[platform].decimal_place || null;

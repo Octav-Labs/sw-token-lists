@@ -30,10 +30,11 @@ module.exports = async function getTokensFromCoingecko(
     } catch (error) {
       continue;
     }
+    const existingToken = currentTokensMap.get(address);
 
-    if (currentTokensMap.get(address) && Math.random() > 0.05) {
-      tokensByAddress.set(address, currentTokensMap.get(address));
-      continue;
+    if (existingToken && Math.random() > 0.05) {
+        tokensByAddress.set(address, existingToken);
+        continue;
     }
     if (tokensByAddress.get(address)) continue;
     const coinDetailsResponse = await axios
@@ -47,7 +48,10 @@ module.exports = async function getTokensFromCoingecko(
       })
       .catch(() => null);
     await sleep(5000);
-    if (!coinDetailsResponse || !coinDetailsResponse.data) continue;
+    if (!coinDetailsResponse || !coinDetailsResponse.data) {
+        if (existingToken) tokensByAddress.set(address, existingToken);
+        continue;
+    }
     const coinDetails = coinDetailsResponse.data;
 
     // Decimals
