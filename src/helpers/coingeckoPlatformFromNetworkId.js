@@ -13,6 +13,7 @@ const platforms = {
   ethereum: "ethereum",
   optimism: "optimistic-ethereum",
   polygon: "polygon-pos",
+  plume: "plume-network",
   solana: "solana",
   starknet: "starknet",
   sui: "sui",

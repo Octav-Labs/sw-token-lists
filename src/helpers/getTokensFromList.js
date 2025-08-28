@@ -12,6 +12,7 @@ const zksyncTokens = require("../tokens/zksync.json");
 const polygonZkEvmTokens = require("../tokens/polygon-zkevm.json");
 const optimismTokens = require("../tokens/optimism.json");
 const polygonTokens = require("../tokens/polygon.json");
+const plumeTokens = require("../tokens/plume.json");
 const solanaTokens = require("../tokens/solana.json");
 const starknetTokens = require("../tokens/starknet.json");
 const suiTokens = require("../tokens/sui.json");
@@ -34,6 +35,7 @@ const lists = {
   ethereum: ethereumTokens,
   optimism: optimismTokens,
   polygon: polygonTokens,
+  plume: plumeTokens,
   solana: solanaTokens,
   starknet: starknetTokens,
   sui: suiTokens,

@@ -23,6 +23,7 @@
     "build:list:zksync": "mkdirp build && node scripts/buildList.js zksync > build/sonarwatch.zksync.tokenlist.json",
     "build:list:ethereum": "mkdirp build && node scripts/buildList.js ethereum > build/sonarwatch.ethereum.tokenlist.json",
     "build:list:optimism": "mkdirp build && node scripts/buildList.js optimism > build/sonarwatch.optimism.tokenlist.json",
+    "build:list:plume": "mkdirp build && node scripts/buildList.js plume > build/sonarwatch.plume.tokenlist.json",
     "build:list:polygon": "mkdirp build && node scripts/buildList.js polygon > build/sonarwatch.polygon.tokenlist.json",
     "build:list:solana": "mkdirp build && node scripts/buildList.js solana > build/sonarwatch.solana.tokenlist.json",
     "build:list:starknet": "mkdirp build && node scripts/buildList.js starknet > build/sonarwatch.starknet.tokenlist.json",
