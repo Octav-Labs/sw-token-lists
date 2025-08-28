@@ -1,0 +1,26 @@
+[
+  {
+    "chainId": 98866,
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "name": "Plume",
+    "symbol": "PLUME",
+    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/PLUME.png",
+    "tags": ["native"],
+    "extensions": {
+      "coingeckoId": "plume"
+    }
+  },
+  {
+    "chainId": 98866,
+    "address": "0xEa237441c92CAe6FC17Caaf9a7acB3f953be4bd1",
+    "decimals": 18,
+    "name": "Wrapped Plume",
+    "symbol": "WPLUME",
+    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/PLUME.png",
+    "tags": ["wnative"],
+    "extensions": {
+      "coingeckoId": "plume"
+    }
+  }
+]
