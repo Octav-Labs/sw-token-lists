@@ -109,6 +109,14 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_optimism.png",
     "rpcEndpoint": "https://mainnet.optimism.io"
   },
+  "plume": {
+    "id": "plume",
+    "name": "Plume",
+    "addressType": "evm",
+    "chainId": 98866,
+    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_plume.png",
+    "rpcEndpoint": "https://rpc.plume.org"
+  },
   "polygon": {
     "id": "polygon",
     "name": "Polygon",
