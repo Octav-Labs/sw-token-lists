@@ -35,7 +35,7 @@ const lists = {
   ethereum: ethereumList,
   optimism: optimismList,
   polygon: polygonList,
-	plume: plumeList,
+  plume: plumeList,
   solana: solanaList,
   starknet: starknetList,
   sui: suiList,
