@@ -26,6 +26,7 @@
     "build:list:plume": "mkdirp build && node scripts/buildList.js plume > build/sonarwatch.plume.tokenlist.json",
     "build:list:polygon": "mkdirp build && node scripts/buildList.js polygon > build/sonarwatch.polygon.tokenlist.json",
     "build:list:solana": "mkdirp build && node scripts/buildList.js solana > build/sonarwatch.solana.tokenlist.json",
+    "build:list:sonic": "mkdirp build && node scripts/buildList.js sonic > build/sonarwatch.sonic.tokenlist.json",
     "build:list:starknet": "mkdirp build && node scripts/buildList.js starknet > build/sonarwatch.starknet.tokenlist.json",
     "build:list:sui": "mkdirp build && node scripts/buildList.js sui > build/sonarwatch.sui.tokenlist.json",
     "build:list:sei": "mkdirp build && node scripts/buildList.js sei > build/sonarwatch.sei.tokenlist.json",

@@ -14,6 +14,7 @@ const optimismTokens = require("../tokens/optimism.json");
 const polygonTokens = require("../tokens/polygon.json");
 const plumeTokens = require("../tokens/plume.json");
 const solanaTokens = require("../tokens/solana.json");
+const sonicTokens = require("../tokens/sonic.json");
 const starknetTokens = require("../tokens/starknet.json");
 const suiTokens = require("../tokens/sui.json");
 const seiTokens = require("../tokens/sei.json");
@@ -37,6 +38,7 @@ const lists = {
   polygon: polygonTokens,
   plume: plumeTokens,
   solana: solanaTokens,
+  sonic: sonicTokens,
   starknet: starknetTokens,
   sui: suiTokens,
   sei: seiTokens,

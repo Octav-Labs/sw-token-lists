@@ -5,7 +5,7 @@
     "decimals": 18,
     "name": "Plume",
     "symbol": "PLUME",
-    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/PLUME.png",
+    "logoURI": "https://raw.githubusercontent.com/Octav-Labs/sw-token-lists/main/images/common/PLUME.png",
     "tags": ["native"],
     "extensions": {
       "coingeckoId": "plume"
@@ -17,7 +17,7 @@
     "decimals": 18,
     "name": "Wrapped Plume",
     "symbol": "WPLUME",
-    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/PLUME.png",
+    "logoURI": "https://raw.githubusercontent.com/Octav-Labs/sw-token-lists/main/images/common/PLUME.png",
     "tags": ["wnative"],
     "extensions": {
       "coingeckoId": "plume"
