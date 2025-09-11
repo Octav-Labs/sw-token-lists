@@ -29,6 +29,7 @@ const tokenGenerators = {
   polygon: () => getEvmTokens("polygon"),
   plume: () => getEvmTokens("plume"),
   solana: () => getSolanaTokens(),
+  sonic: () => getEvmTokens("sonic"),
   starknet: () => getStarknetTokens(),
   sui: () => getSuiTokens(),
   sei: () => seiTokens,

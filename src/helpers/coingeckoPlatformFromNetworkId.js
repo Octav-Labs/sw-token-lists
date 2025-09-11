@@ -15,6 +15,7 @@ const platforms = {
   polygon: "polygon-pos",
   plume: "plume-network",
   solana: "solana",
+  sonic: "sonic",
   starknet: "starknet",
   sui: "sui",
   sei: "sei",
