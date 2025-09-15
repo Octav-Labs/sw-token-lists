@@ -36,7 +36,7 @@ async function jupApiGet(path) {
 
 module.exports = async function getSolanaTokensFromJup(currentTokensSet) {
   const tokensWithMarket = await jupApiGet("tokens_with_markets");
-  await sleep(5000);
+  await sleep(305000);
   const tokensVerified = await jupApiGet(
     "tokens?tags=verified,birdeye-trending"
   );
