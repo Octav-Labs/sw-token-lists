@@ -24,9 +24,12 @@ const uriValidate = addFormats(new Ajv()).compile(uriSchema);
 //   mint_authority:   null | string;
 // }
 
-async function jupApiGet(path) {
+const JUP_V1_API_URL = "https://tokens.jup.ag";
+const JUP_LITE_V2_API_URL = "https://lite-api.jup.ag";
+
+async function jupApiGet(baseUrl, path) {
   const response = await axios
-    .get(`https://tokens.jup.ag/${path}`, { timeout: 90000 })
+    .get(`${baseUrl}/${path}`, { timeout: 90000 })
     .catch((e) => {
       throw new Error(`Unable to fetch jup list: ${path}`, e);
     });
@@ -35,10 +38,14 @@ async function jupApiGet(path) {
 }
 
 module.exports = async function getSolanaTokensFromJup(currentTokensSet) {
-  const tokensWithMarket = await jupApiGet("tokens_with_markets");
+  const tokensWithMarket = await jupApiGet(
+    JUP_V1_API_URL,
+    "tokens_with_markets"
+  );
   await sleep(5000);
   const tokensVerified = await jupApiGet(
-    "tokens?tags=verified,birdeye-trending"
+    JUP_LITE_V2_API_URL,
+    "tokens/v2/tag?query=verified"
   );
   const jupTokensMap = new Map();
   [...tokensWithMarket, ...tokensVerified].forEach((t) => {
