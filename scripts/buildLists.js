@@ -13,6 +13,7 @@ const polygonZkEvmList = require("../build/sonarwatch.polygon-zkevm.tokenlist.js
 const ethereumList = require("../build/sonarwatch.ethereum.tokenlist.json");
 const optimismList = require("../build/sonarwatch.optimism.tokenlist.json");
 const polygonList = require("../build/sonarwatch.polygon.tokenlist.json");
+const plasmaList = require("../build/sonarwatch.plasma.tokenlist.json");
 const plumeList = require("../build/sonarwatch.plume.tokenlist.json");
 const solanaList = require("../build/sonarwatch.solana.tokenlist.json");
 const sonicList = require("../build/sonarwatch.sonic.tokenlist.json");
@@ -36,6 +37,7 @@ const lists = {
   ethereum: ethereumList,
   optimism: optimismList,
   polygon: polygonList,
+  plasma: plasmaList,
   plume: plumeList,
   solana: solanaList,
   sonic: sonicList,
