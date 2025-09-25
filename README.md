@@ -19,6 +19,7 @@ This NPM module and GitHub repo contains SonarWatch's token lists.
 - [Gnosis](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.gnosis.tokenlist.json)
 - [Linea](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.linea.tokenlist.json)
 - [Optimism](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.optimism.tokenlist.json)
+- [Plasma](https://github.com/Octav-Labs/sw-token-lists/releases/latest/download/sonarwatch.plasma.tokenlist.json)
 - [Plume](https://github.com/Octav-Labs/sw-token-lists/releases/latest/download/sonarwatch.plume.tokenlist.json)
 - [Polygon ZkEvm](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.polygon-zkevm.tokenlist.json)
 - [Polygon](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.polygon.tokenlist.json)

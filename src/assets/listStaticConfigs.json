@@ -109,6 +109,14 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_optimism.png",
     "rpcEndpoint": "https://mainnet.optimism.io"
   },
+  "plasma": {
+    "id": "plasma",
+    "name": "Plasma",
+    "addressType": "evm",
+    "chainId": 9745,
+    "logoURI": "https://assets.coingecko.com/coins/images/66489/standard/Plasma-symbol-green-1.png",
+    "rpcEndpoint": "https://rpc.plasma.to"
+  },
   "plume": {
     "id": "plume",
     "name": "Plume",

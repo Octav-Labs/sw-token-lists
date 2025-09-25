@@ -27,6 +27,7 @@ const tokenGenerators = {
   ethereum: () => getEvmTokens("ethereum"),
   optimism: () => getEvmTokens("optimism"),
   polygon: () => getEvmTokens("polygon"),
+  plasma: () => getEvmTokens("plasma"),
   plume: () => getEvmTokens("plume"),
   solana: () => getSolanaTokens(),
   sonic: () => getEvmTokens("sonic"),
