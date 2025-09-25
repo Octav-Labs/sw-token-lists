@@ -20,7 +20,7 @@
     "logoURI": "https://raw.githubusercontent.com/Octav-Labs/sw-token-lists/main/images/common/XPL.png",
     "tags": ["wnative"],
     "extensions": {
-      "coingeckoId": "plasma"
+      "coingeckoId": "wrapped-xpl"
     }
   }
 ]
