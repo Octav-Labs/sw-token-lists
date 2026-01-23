@@ -20,6 +20,7 @@ const tokenGenerators = {
   base: () => getEvmTokens("base"),
   cronos: () => getEvmTokens("cronos"),
   gnosis: () => getEvmTokens("gnosis"),
+  hyperevm: () => getEvmTokens("hyperevm"),
   linea: () => getEvmTokens("linea"),
   scroll: () => getEvmTokens("scroll"),
   zksync: () => zksyncTokens,

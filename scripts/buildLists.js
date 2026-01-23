@@ -6,6 +6,7 @@ const arbitrumList = require("../build/sonarwatch.arbitrum.tokenlist.json");
 const baseList = require("../build/sonarwatch.base.tokenlist.json");
 const cronosList = require("../build/sonarwatch.cronos.tokenlist.json");
 const gnosisList = require("../build/sonarwatch.gnosis.tokenlist.json");
+const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
 const scrollList = require("../build/sonarwatch.scroll.tokenlist.json");
 const zksyncList = require("../build/sonarwatch.zksync.tokenlist.json");
@@ -20,7 +21,6 @@ const sonicList = require("../build/sonarwatch.sonic.tokenlist.json");
 const starknetList = require("../build/sonarwatch.starknet.tokenlist.json");
 const suiList = require("../build/sonarwatch.sui.tokenlist.json");
 const seiList = require("../build/sonarwatch.sei.tokenlist.json");
-const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 
 const lists = {
   aptos: aptosList,
@@ -31,6 +31,7 @@ const lists = {
   base: baseList,
   cronos: cronosList,
   gnosis: gnosisList,
+  hyperevm: hyperevmList,
   linea: lineaList,
   scroll: scrollList,
   zksync: zksyncList,
@@ -45,6 +46,5 @@ const lists = {
   starknet: starknetList,
   sui: suiList,
   sei: seiList,
-  hyperevm: hyperevmList,
 };
 console.log(JSON.stringify(lists));

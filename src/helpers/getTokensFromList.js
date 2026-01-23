@@ -6,6 +6,7 @@ const arbitrumTokens = require("../tokens/arbitrum.json");
 const baseTokens = require("../tokens/base.json");
 const cronosTokens = require("../tokens/cronos.json");
 const gnosisTokens = require("../tokens/gnosis.json");
+const hyperevmTokens = require("../tokens/hyperevm.json");
 const lineaTokens = require("../tokens/linea.json");
 const scrollTokens = require("../tokens/scroll.json");
 const zksyncTokens = require("../tokens/zksync.json");
@@ -20,7 +21,6 @@ const starknetTokens = require("../tokens/starknet.json");
 const suiTokens = require("../tokens/sui.json");
 const seiTokens = require("../tokens/sei.json");
 const ethereumTokens = require("../tokens/ethereum.json");
-const hyperevmTokens = require("../tokens/hyperevm.json");
 
 const lists = {
   aptos: aptosTokens,
@@ -31,6 +31,7 @@ const lists = {
   base: baseTokens,
   cronos: cronosTokens,
   gnosis: gnosisTokens,
+  hyperevm: hyperevmTokens,
   linea: lineaTokens,
   scroll: scrollTokens,
   zksync: zksyncTokens,
@@ -45,7 +46,6 @@ const lists = {
   starknet: starknetTokens,
   sui: suiTokens,
   sei: seiTokens,
-  hyperevm: hyperevmTokens,
 };
 
 module.exports = function getTokensFromList(networkId) {
