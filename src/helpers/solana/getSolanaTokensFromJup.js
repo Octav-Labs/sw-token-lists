@@ -29,7 +29,7 @@ async function jupApiGet(tag) {
   const response = await axios
     .get(`https://api.jup.ag/tokens/v2/tag`, {
       params: { query: tag },
-      headers: { "x-api-key": process.env.JUP_API_KEY },
+      headers: { "x-api-key": process.env.JUP_TOKEN },
       timeout: 90000,
     })
     .catch((e) => {
