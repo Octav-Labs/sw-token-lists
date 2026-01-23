@@ -20,6 +20,7 @@ const starknetTokens = require("../tokens/starknet.json");
 const suiTokens = require("../tokens/sui.json");
 const seiTokens = require("../tokens/sei.json");
 const ethereumTokens = require("../tokens/ethereum.json");
+const hyperevmTokens = require("../tokens/hyperevm.json");
 
 const lists = {
   aptos: aptosTokens,
@@ -44,6 +45,7 @@ const lists = {
   starknet: starknetTokens,
   sui: suiTokens,
   sei: seiTokens,
+  hyperevm: hyperevmTokens,
 };
 
 module.exports = function getTokensFromList(networkId) {

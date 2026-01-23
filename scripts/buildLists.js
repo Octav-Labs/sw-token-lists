@@ -20,6 +20,7 @@ const sonicList = require("../build/sonarwatch.sonic.tokenlist.json");
 const starknetList = require("../build/sonarwatch.starknet.tokenlist.json");
 const suiList = require("../build/sonarwatch.sui.tokenlist.json");
 const seiList = require("../build/sonarwatch.sei.tokenlist.json");
+const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 
 const lists = {
   aptos: aptosList,
@@ -44,5 +45,6 @@ const lists = {
   starknet: starknetList,
   sui: suiList,
   sei: seiList,
+  hyperevm: hyperevmList,
 };
 console.log(JSON.stringify(lists));

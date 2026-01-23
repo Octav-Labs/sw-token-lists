@@ -34,6 +34,7 @@ const tokenGenerators = {
   starknet: () => getStarknetTokens(),
   sui: () => getSuiTokens(),
   sei: () => seiTokens,
+  hyperevm: () => getEvmTokens("hyperevm"),
 };
 
 // const currentTokenGenerators = {
