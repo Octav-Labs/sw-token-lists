@@ -6,6 +6,7 @@ const platforms = {
   base: "base",
   cronos: "cronos",
   gnosis: "xdai",
+  hyperevm: "hyperevm",
   linea: "linea",
   scroll: "scroll",
   zksync: "zksync",

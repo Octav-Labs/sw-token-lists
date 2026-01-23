@@ -1,8 +1,8 @@
 const { default: axios } = require("axios");
 
 module.exports = async function getTokensFromCurrentList(networkId) {
-  //temp till we have a list
-  if (networkId === "plasma") return [];
+  // temp till we have a list
+  if (networkId === "hyperevm") return [];
 
   let currentList = await axios
     .get(

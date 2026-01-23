@@ -7,13 +7,12 @@ module.exports = async function getSolanaTokens() {
 
   // Fetch from current version
   const currentTokens = await getTokensFromCurrentList("solana");
-  const currentTokensSet = new Set();
   currentTokens.forEach((token) => {
-    currentTokensSet.add(token.address);
+    tokensByAddress.set(token.address, token);
   });
 
-  // Add from jup
-  const jupTokens = await getSolanaTokensFromJup(currentTokensSet);
+  // Add from jup (overwrites current tokens with fresh data)
+  const jupTokens = await getSolanaTokensFromJup();
   jupTokens.forEach((token) => {
     tokensByAddress.set(token.address, token);
   });

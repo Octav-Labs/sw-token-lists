@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
 const { default: axios } = require("axios");
@@ -24,24 +25,33 @@ const uriValidate = addFormats(new Ajv()).compile(uriSchema);
 //   mint_authority:   null | string;
 // }
 
-async function jupApiGet(path) {
+async function jupApiGet(tag) {
   const response = await axios
-    .get(`https://tokens.jup.ag/${path}`, { timeout: 90000 })
+    .get(`https://api.jup.ag/tokens/v2/tag`, {
+      params: { query: tag },
+      headers: { "x-api-key": process.env.JUP_TOKEN },
+      timeout: 90000,
+    })
     .catch((e) => {
-      throw new Error(`Unable to fetch jup list: ${path}`, e);
+      throw new Error(`Unable to fetch jup list: ${tag}`, e);
     });
   if (!response || !response.data) return [];
-  return response.data;
+  return response.data.map((t) => ({
+    address: t.id,
+    name: t.name,
+    symbol: t.symbol,
+    decimals: t.decimals,
+    logoURI: t.icon,
+    tags: t.tags,
+  }));
 }
 
-module.exports = async function getSolanaTokensFromJup(currentTokensSet) {
-  const tokensWithMarket = await jupApiGet("tokens_with_markets");
-  await sleep(305000);
-  const tokensVerified = await jupApiGet(
-    "tokens?tags=verified,birdeye-trending"
-  );
+module.exports = async function getSolanaTokensFromJup() {
+  const tokensVerified = await jupApiGet("verified");
+  await sleep(2000);
+  const tokensLst = await jupApiGet("lst");
   const jupTokensMap = new Map();
-  [...tokensWithMarket, ...tokensVerified].forEach((t) => {
+  [...tokensVerified, ...tokensLst].forEach((t) => {
     jupTokensMap.set(t.address, t);
   });
   const jupTokens = Array.from(jupTokensMap.values());

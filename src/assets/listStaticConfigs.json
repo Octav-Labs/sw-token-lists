@@ -62,6 +62,14 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_none.png",
     "rpcEndpoint": "https://gnosis.publicnode.com"
   },
+  "hyperevm": {
+    "id": "hyperevm",
+    "name": "HyperEVM",
+    "addressType": "evm",
+    "chainId": 999,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/22208/large/hyperliquid.jpg?1740125774",
+    "rpcEndpoint": "https://rpc.hyperliquid.xyz/evm"
+  },
   "linea": {
     "id": "linea",
     "name": "Linea",

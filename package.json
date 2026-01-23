@@ -17,6 +17,7 @@
     "build:list:base": "mkdirp build && node scripts/buildList.js base > build/sonarwatch.base.tokenlist.json",
     "build:list:cronos": "mkdirp build && node scripts/buildList.js cronos > build/sonarwatch.cronos.tokenlist.json",
     "build:list:gnosis": "mkdirp build && node scripts/buildList.js gnosis > build/sonarwatch.gnosis.tokenlist.json",
+    "build:list:hyperevm": "mkdirp build && node scripts/buildList.js hyperevm > build/sonarwatch.hyperevm.tokenlist.json",
     "build:list:linea": "mkdirp build && node scripts/buildList.js linea > build/sonarwatch.linea.tokenlist.json",
     "build:list:scroll": "mkdirp build && node scripts/buildList.js scroll > build/sonarwatch.scroll.tokenlist.json",
     "build:list:polygon-zkevm": "mkdirp build && node scripts/buildList.js polygon-zkevm > build/sonarwatch.polygon-zkevm.tokenlist.json",
