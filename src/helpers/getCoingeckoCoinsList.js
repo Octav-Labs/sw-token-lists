@@ -5,7 +5,7 @@ const sleep = require("./sleep");
 
 const CACHE_DIR = path.join(__dirname, "../../.cache");
 const CACHE_FILE = path.join(CACHE_DIR, "coingecko-coins-list.json");
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+const CACHE_TTL = 4 * 60 * 60 * 1000; // 4 hour
 
 module.exports = async function getCoingeckoCoinsList() {
   // Check cache first
