@@ -8,6 +8,7 @@ const getSolanaTokens = require("./helpers/solana/getSolanaTokens");
 const getAptosTokens = require("./helpers/aptos/getAptosTokens");
 const getSuiTokens = require("./helpers/sui/getSuiTokens");
 const getStarknetTokens = require("./helpers/starknet/getStarknetTokens");
+const getTronTokens = require("./helpers/tron/getTronTokens");
 const formatToken = require("./helpers/formatToken");
 const getTokensFromCurrentList = require("./helpers/getTokensFromCurrentList");
 
@@ -35,6 +36,7 @@ const tokenGenerators = {
   starknet: () => getStarknetTokens(),
   sui: () => getSuiTokens(),
   sei: () => seiTokens,
+  tron: () => getTronTokens(),
 };
 
 // const currentTokenGenerators = {

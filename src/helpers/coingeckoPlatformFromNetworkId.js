@@ -21,6 +21,7 @@ const platforms = {
   starknet: "starknet",
   sui: "sui",
   sei: "sei",
+  tron: "tron",
 };
 
 module.exports = function coingeckoPlatformFromNetworkId(networkId) {

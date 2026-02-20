@@ -47,6 +47,16 @@ function formatTokenAddressStarknet(address) {
   return formatMoveAddress(address);
 }
 
+const TRON_ADDRESS_REGEX =
+  /^T[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{33}$/;
+
+function formatTokenAddressTron(address) {
+  if (!TRON_ADDRESS_REGEX.test(address)) {
+    throw new Error(`Invalid Tron address: ${address}`);
+  }
+  return address;
+}
+
 const formaters = {
   move: formatTokenAddressMove,
   evm: formatTokenAddressEvm,
@@ -54,6 +64,7 @@ const formaters = {
   bitcoin: formatTokenAddressBitcoin,
   sei: formatTokenAddressSei,
   starknet: formatTokenAddressStarknet,
+  tron: formatTokenAddressTron,
 };
 
 module.exports = function formatTokenAddress(address, networkId) {

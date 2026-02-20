@@ -179,5 +179,12 @@
     "addressType": "sei",
     "chainId": 1,
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_none.png"
+  },
+  "tron": {
+    "id": "tron",
+    "name": "Tron",
+    "addressType": "tron",
+    "chainId": 728126428,
+    "logoURI": "https://assets.coingecko.com/coins/images/1094/standard/tron-logo.png"
   }
 }

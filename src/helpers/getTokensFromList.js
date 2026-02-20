@@ -20,6 +20,7 @@ const sonicTokens = require("../tokens/sonic.json");
 const starknetTokens = require("../tokens/starknet.json");
 const suiTokens = require("../tokens/sui.json");
 const seiTokens = require("../tokens/sei.json");
+const tronTokens = require("../tokens/tron.json");
 const ethereumTokens = require("../tokens/ethereum.json");
 
 const lists = {
@@ -46,6 +47,7 @@ const lists = {
   starknet: starknetTokens,
   sui: suiTokens,
   sei: seiTokens,
+  tron: tronTokens,
 };
 
 module.exports = function getTokensFromList(networkId) {
