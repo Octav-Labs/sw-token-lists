@@ -5,6 +5,7 @@ const bitcoinSchema = require("../schemas/bitcoinSchema");
 const solanaSchema = require("../schemas/solanaSchema");
 const cosmosSchema = require("../schemas/cosmosSchema");
 const starknetSchema = require("../schemas/starknetSchema");
+const tronSchema = require("../schemas/tronSchema");
 
 const schemas = {
   move: moveSchema,
@@ -13,6 +14,7 @@ const schemas = {
   bitcoin: bitcoinSchema,
   sei: cosmosSchema,
   starknet: starknetSchema,
+  tron: tronSchema,
 };
 
 module.exports = function getSchemaFromNetworkId(networkId) {
