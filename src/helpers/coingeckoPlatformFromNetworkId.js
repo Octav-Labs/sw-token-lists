@@ -8,6 +8,7 @@ const platforms = {
   gnosis: "xdai",
   hyperevm: "hyperevm",
   linea: "linea",
+  monad: "monad",
   scroll: "scroll",
   zksync: "zksync",
   "polygon-zkevm": "polygon-zkevm",

@@ -8,6 +8,7 @@ const cronosTokens = require("../tokens/cronos.json");
 const gnosisTokens = require("../tokens/gnosis.json");
 const hyperevmTokens = require("../tokens/hyperevm.json");
 const lineaTokens = require("../tokens/linea.json");
+const monadTokens = require("../tokens/monad.json");
 const scrollTokens = require("../tokens/scroll.json");
 const zksyncTokens = require("../tokens/zksync.json");
 const polygonZkEvmTokens = require("../tokens/polygon-zkevm.json");
@@ -34,6 +35,7 @@ const lists = {
   gnosis: gnosisTokens,
   hyperevm: hyperevmTokens,
   linea: lineaTokens,
+  monad: monadTokens,
   scroll: scrollTokens,
   zksync: zksyncTokens,
   "polygon-zkevm": polygonZkEvmTokens,
