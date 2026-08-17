@@ -14,7 +14,7 @@ const valueStringIndex =
   );
 evmSchema.definitions.ExtensionPrimitiveValue.anyOf[valueStringIndex] = {
   ...evmSchema.definitions.ExtensionPrimitiveValue.anyOf[valueStringIndex],
-  maxLength: 84,
+  maxLength: 90,
 };
 
 evmSchema.definitions.ExtensionPrimitiveValue.anyOf.push({
