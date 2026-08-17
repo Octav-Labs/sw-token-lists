@@ -186,5 +186,13 @@
     "addressType": "tron",
     "chainId": 728126428,
     "logoURI": "https://assets.coingecko.com/coins/images/1094/standard/tron-logo.png"
+  },
+  "monad": {
+    "id": "monad",
+    "name": "Monad",
+    "addressType": "evm",
+    "chainId": 143,
+    "logoURI": "https://coin-images.coingecko.com/coins/images/38927/large/mon.png",
+    "rpcEndpoint": "https://rpc.monad.xyz"
   }
 }

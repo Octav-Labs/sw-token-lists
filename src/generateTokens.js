@@ -37,6 +37,7 @@ const tokenGenerators = {
   sui: () => getSuiTokens(),
   sei: () => seiTokens,
   tron: () => getTronTokens(),
+  monad: () => getEvmTokens("monad"),
 };
 
 // const currentTokenGenerators = {

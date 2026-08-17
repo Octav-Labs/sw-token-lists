@@ -22,6 +22,7 @@ const starknetList = require("../build/sonarwatch.starknet.tokenlist.json");
 const suiList = require("../build/sonarwatch.sui.tokenlist.json");
 const seiList = require("../build/sonarwatch.sei.tokenlist.json");
 const tronList = require("../build/sonarwatch.tron.tokenlist.json");
+const monadList = require("../build/sonarwatch.monad.tokenlist.json");
 
 const lists = {
   aptos: aptosList,
@@ -48,5 +49,6 @@ const lists = {
   sui: suiList,
   sei: seiList,
   tron: tronList,
+  monad: monadList,
 };
 console.log(JSON.stringify(lists));
