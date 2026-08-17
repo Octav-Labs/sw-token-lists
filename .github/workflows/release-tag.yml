@@ -35,6 +35,3 @@ jobs:
             --title "v$VERSION" \
             --generate-notes \
             --target main
-      # - run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
