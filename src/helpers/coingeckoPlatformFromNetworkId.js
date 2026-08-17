@@ -8,6 +8,7 @@ const platforms = {
   gnosis: "xdai",
   hyperevm: "hyperevm",
   linea: "linea",
+  monad: "monad",
   scroll: "scroll",
   zksync: "zksync",
   "polygon-zkevm": "polygon-zkevm",
@@ -22,7 +23,6 @@ const platforms = {
   sui: "sui",
   sei: "sei",
   tron: "tron",
-  monad: "monad",
 };
 
 module.exports = function coingeckoPlatformFromNetworkId(networkId) {

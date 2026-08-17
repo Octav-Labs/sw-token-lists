@@ -23,6 +23,7 @@ const tokenGenerators = {
   gnosis: () => getEvmTokens("gnosis"),
   hyperevm: () => getEvmTokens("hyperevm"),
   linea: () => getEvmTokens("linea"),
+  monad: () => getEvmTokens("monad"),
   scroll: () => getEvmTokens("scroll"),
   zksync: () => zksyncTokens,
   "polygon-zkevm": () => getEvmTokens("polygon-zkevm"),
@@ -37,7 +38,6 @@ const tokenGenerators = {
   sui: () => getSuiTokens(),
   sei: () => seiTokens,
   tron: () => getTronTokens(),
-  monad: () => getEvmTokens("monad"),
 };
 
 // const currentTokenGenerators = {

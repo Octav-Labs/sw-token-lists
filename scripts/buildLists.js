@@ -8,6 +8,7 @@ const cronosList = require("../build/sonarwatch.cronos.tokenlist.json");
 const gnosisList = require("../build/sonarwatch.gnosis.tokenlist.json");
 const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
+const monadList = require("../build/sonarwatch.monad.tokenlist.json");
 const scrollList = require("../build/sonarwatch.scroll.tokenlist.json");
 const zksyncList = require("../build/sonarwatch.zksync.tokenlist.json");
 const polygonZkEvmList = require("../build/sonarwatch.polygon-zkevm.tokenlist.json");
@@ -22,7 +23,6 @@ const starknetList = require("../build/sonarwatch.starknet.tokenlist.json");
 const suiList = require("../build/sonarwatch.sui.tokenlist.json");
 const seiList = require("../build/sonarwatch.sei.tokenlist.json");
 const tronList = require("../build/sonarwatch.tron.tokenlist.json");
-const monadList = require("../build/sonarwatch.monad.tokenlist.json");
 
 const lists = {
   aptos: aptosList,
@@ -35,6 +35,7 @@ const lists = {
   gnosis: gnosisList,
   hyperevm: hyperevmList,
   linea: lineaList,
+  monad: monadList,
   scroll: scrollList,
   zksync: zksyncList,
   "polygon-zkevm": polygonZkEvmList,
@@ -49,6 +50,5 @@ const lists = {
   sui: suiList,
   sei: seiList,
   tron: tronList,
-  monad: monadList,
 };
 console.log(JSON.stringify(lists));
