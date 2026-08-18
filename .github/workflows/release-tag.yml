@@ -42,9 +42,9 @@ jobs:
             exit 1
           fi
 
-          COMMITTER=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.committer.login // ""')
+          AUTHOR=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.author.login // ""')
           VERIFIED=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.commit.verification.verified')
-          if [ "$COMMITTER" != "$TRUSTED_AUTOMATION_LOGIN" ] || [ "$VERIFIED" != "true" ]; then
+          if [ "$AUTHOR" != "$TRUSTED_AUTOMATION_LOGIN" ] || [ "$VERIFIED" != "true" ]; then
             echo "Release commit $SOURCE_SHA is not a verified $TRUSTED_AUTOMATION_LOGIN commit."
             exit 1
           fi
