@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "0 0 1 * *"
 
+concurrency:
+  group: open-monthly-release-pr
+  cancel-in-progress: false
+
 jobs:
   open-release-pr:
     runs-on: ubuntu-latest
@@ -14,31 +18,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: git config
+      - name: Prepare version bump
+        id: version
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      - run: npm ci
-      - run: npm run build
-        env:
-          JUP_TOKEN: ${{ secrets.JUP_TOKEN }}
-      - run: npm test
-      - name: Bump version and commit
-        run: npm run release -- --ci -i patch --no-git.tag --no-git.push --no-github.release --no-npm.publish --no-git.requireCleanWorkingDir
-      - name: Push release branch and open PR
-        env:
-          GH_TOKEN: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
-        run: |
+          npm --no-git-tag-version --ignore-scripts version patch
           VERSION=$(node -p "require('./package.json').version")
-          BRANCH="release/v$VERSION"
-          git checkout -b "$BRANCH"
-          git push -u origin "$BRANCH"
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "Release v$VERSION" \
-            --body "Automated monthly release PR. Merging this will tag \`v$VERSION\` and publish the GitHub Release with the built token lists."
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "branch=release/v$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Create signed release PR
+        id: release-pr
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ github.token }}
+          sign-commits: true
+          add-paths: |
+            package.json
+            package-lock.json
+          base: main
+          branch: ${{ steps.version.outputs.branch }}
+          commit-message: Release ${{ steps.version.outputs.version }}
+          title: Release ${{ steps.version.outputs.version }}
+          body: Automated monthly release.
+      - name: Verify signed release commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMIT_SHA: ${{ steps.release-pr.outputs.pull-request-head-sha }}
+        run: |
+          test -n "$COMMIT_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/commits/$COMMIT_SHA" --jq '.commit.verification.verified')" = "true"

@@ -14,11 +14,75 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
-          token: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Resolve release metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+          RELEASE_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          RELEASE_PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          RELEASE_BRANCH: ${{ github.event.pull_request.head.ref }}
+          TRUSTED_AUTOMATION_LOGIN: github-actions[bot]
+        run: |
+          SOURCE_SHA=$(git rev-parse HEAD)
+          if [ "$SOURCE_SHA" != "$EXPECTED_SOURCE_SHA" ]; then
+            echo "Checked-out source $SOURCE_SHA does not match pull request head $EXPECTED_SOURCE_SHA."
+            exit 1
+          fi
+          if [ "$RELEASE_HEAD_REPOSITORY" != "$GITHUB_REPOSITORY" ]; then
+            echo "Release pull request head repository $RELEASE_HEAD_REPOSITORY is not trusted."
+            exit 1
+          fi
+          if [ "$RELEASE_PR_AUTHOR" != "$TRUSTED_AUTOMATION_LOGIN" ]; then
+            echo "Release pull request author $RELEASE_PR_AUTHOR is not trusted."
+            exit 1
+          fi
+
+          COMMITTER=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.committer.login // ""')
+          VERIFIED=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.commit.verification.verified')
+          if [ "$COMMITTER" != "$TRUSTED_AUTOMATION_LOGIN" ] || [ "$VERIFIED" != "true" ]; then
+            echo "Release commit $SOURCE_SHA is not a verified $TRUSTED_AUTOMATION_LOGIN commit."
+            exit 1
+          fi
+
+          VERSION=$(node -p "require('./package.json').version")
+          if [ "$RELEASE_BRANCH" != "release/v$VERSION" ]; then
+            echo "Release branch $RELEASE_BRANCH does not match package version $VERSION."
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+      - name: Check out merged release commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          persist-credentials: false
+      - name: Resolve merged release source
+        env:
+          EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          SOURCE_SHA=$(git rev-parse HEAD)
+          MERGED_VERSION=$(node -p "require('./package.json').version")
+          if [ -z "$EXPECTED_SOURCE_SHA" ] || [ "$SOURCE_SHA" != "$EXPECTED_SOURCE_SHA" ]; then
+            echo "Checked-out release source $SOURCE_SHA does not match merged commit $EXPECTED_SOURCE_SHA."
+            exit 1
+          fi
+          if [ "$MERGED_VERSION" != "$VERSION" ]; then
+            echo "Merged release version $MERGED_VERSION does not match validated pull request version $VERSION."
+            exit 1
+          fi
+          echo "SOURCE_SHA=$SOURCE_SHA" >> "$GITHUB_ENV"
+      - name: Verify release does not exist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v$VERSION" >/dev/null 2>&1; then
+            echo "Release v$VERSION already exists."
+            exit 1
+          fi
       - run: npm ci
       - run: npm run build
         env:
@@ -26,12 +90,11 @@ jobs:
       - run: npm test
       - name: Tag and create GitHub Release
         env:
-          GH_TOKEN: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          VERSION=$(node -p "require('./package.json').version")
           gh release create "v$VERSION" \
             build/*.tokenlist.json \
             build/sonarwatch.tokenlists.json \
-            --title "v$VERSION" \
+            --title "Release $VERSION" \
             --generate-notes \
-            --target main
+            --target "$SOURCE_SHA"
