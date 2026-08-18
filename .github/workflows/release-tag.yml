@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # Needed to look up and download the build artifact produced by the
+      # release-pr-cron run.
+      actions: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,15 +23,48 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
+      - name: Resolve version
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+      # release-pr-cron.yml already built these lists (~3h) on this exact
+      # commit and uploaded them. Reuse that output instead of rebuilding.
+      # Looked up by artifact name rather than by branch: the cron run is
+      # triggered on main and creates release/vX.Y.Z during the run, so its
+      # recorded head_branch is main, not the release branch.
+      - name: Locate build artifact from the release PR run
+        id: artifact
+        env:
+          GH_TOKEN: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
+        run: |
+          RUN_ID=$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=token-lists-v$VERSION" \
+            --jq '.artifacts | map(select(.expired == false)) | .[0].workflow_run.id // empty')
+          if [ -n "$RUN_ID" ]; then
+            echo "Reusing build from run $RUN_ID"
+            echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+          else
+            echo "No usable artifact for v$VERSION (missing or past retention) — rebuilding."
+          fi
+      - name: Download build artifact
+        if: steps.artifact.outputs.run_id != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: token-lists-v${{ env.VERSION }}
+          path: build/
+          run-id: ${{ steps.artifact.outputs.run_id }}
+          github-token: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
+      # Fallback so a release is never blocked outright if the artifact
+      # expired (e.g. the release PR sat unmerged past retention).
+      - name: Rebuild token lists (fallback)
+        if: steps.artifact.outputs.run_id == ''
+        run: npm run build
         env:
           JUP_TOKEN: ${{ secrets.JUP_TOKEN }}
+      # Reads from build/, so this validates the downloaded artifact rather
+      # than trusting it.
       - run: npm test
       - name: Tag and create GitHub Release
         env:
           GH_TOKEN: ${{ secrets.SW_PUBLIC_REPOS_GITHUB_TOKEN }}
         run: |
-          VERSION=$(node -p "require('./package.json').version")
           gh release create "v$VERSION" \
             build/*.tokenlist.json \
             build/sonarwatch.tokenlists.json \
