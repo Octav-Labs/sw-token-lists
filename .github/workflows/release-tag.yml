@@ -27,6 +27,7 @@ jobs:
           RELEASE_PR_AUTHOR: ${{ github.event.pull_request.user.login }}
           RELEASE_BRANCH: ${{ github.event.pull_request.head.ref }}
           TRUSTED_AUTOMATION_LOGIN: github-actions[bot]
+          TRUSTED_COMMITTER_LOGIN: web-flow
         run: |
           SOURCE_SHA=$(git rev-parse HEAD)
           if [ "$SOURCE_SHA" != "$EXPECTED_SOURCE_SHA" ]; then
@@ -42,12 +43,7 @@ jobs:
             exit 1
           fi
 
-          AUTHOR=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.author.login // ""')
-          VERIFIED=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.commit.verification.verified')
-          if [ "$AUTHOR" != "$TRUSTED_AUTOMATION_LOGIN" ] || [ "$VERIFIED" != "true" ]; then
-            echo "Release commit $SOURCE_SHA is not a verified $TRUSTED_AUTOMATION_LOGIN commit."
-            exit 1
-          fi
+          gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" | node scripts/verifyReleaseCommit.js
 
           VERSION=$(node -p "require('./package.json').version")
           if [ "$RELEASE_BRANCH" != "release/v$VERSION" ]; then
