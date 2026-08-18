@@ -55,6 +55,25 @@ jobs:
             exit 1
           fi
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+      - name: Check out merged release commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          persist-credentials: false
+      - name: Resolve merged release source
+        env:
+          EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          SOURCE_SHA=$(git rev-parse HEAD)
+          MERGED_VERSION=$(node -p "require('./package.json').version")
+          if [ -z "$EXPECTED_SOURCE_SHA" ] || [ "$SOURCE_SHA" != "$EXPECTED_SOURCE_SHA" ]; then
+            echo "Checked-out release source $SOURCE_SHA does not match merged commit $EXPECTED_SOURCE_SHA."
+            exit 1
+          fi
+          if [ "$MERGED_VERSION" != "$VERSION" ]; then
+            echo "Merged release version $MERGED_VERSION does not match validated pull request version $VERSION."
+            exit 1
+          fi
           echo "SOURCE_SHA=$SOURCE_SHA" >> "$GITHUB_ENV"
       - name: Verify release does not exist
         env:
