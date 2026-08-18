@@ -43,7 +43,13 @@ jobs:
             exit 1
           fi
 
-          gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" | node scripts/verifyReleaseCommit.js
+          AUTHOR=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.author.login // ""')
+          COMMITTER=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.committer.login // ""')
+          VERIFIED=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SOURCE_SHA" --jq '.commit.verification.verified')
+          if [ "$AUTHOR" != "$TRUSTED_AUTOMATION_LOGIN" ] || [ "$COMMITTER" != "$TRUSTED_COMMITTER_LOGIN" ] || [ "$VERIFIED" != "true" ]; then
+            echo "Release commit $SOURCE_SHA does not have the expected trusted author and signer."
+            exit 1
+          fi
 
           VERSION=$(node -p "require('./package.json').version")
           if [ "$RELEASE_BRANCH" != "release/v$VERSION" ]; then
