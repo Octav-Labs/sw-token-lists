@@ -22,5 +22,12 @@
     "extensions": {
       "coingeckoId": "weth"
     }
+  },
+  {
+    "chainId": 59144,
+    "address": "0xa500000000e482752f032eA387390b6025a2377b",
+    "decimals": 18,
+    "name": "Astera USD",
+    "symbol": "asUSD"
   }
 ]
