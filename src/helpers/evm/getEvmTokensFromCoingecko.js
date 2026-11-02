@@ -2,15 +2,40 @@ const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
 const axios = require("axios");
 const { getAddress } = require("@ethersproject/address");
-const { StaticJsonRpcProvider } = require("@ethersproject/providers");
 const listStaticConfigs = require("../../assets/listStaticConfigs.json");
 const coingeckoPlatformFromNetworkId = require("../coingeckoPlatformFromNetworkId");
-const sleep = require("../sleep");
-const getErc20Decimals = require("./getErc20Decimals");
 const uriSchema = require("../../schemas/uriSchema");
 const getCoingeckoCoinsList = require("../getCoingeckoCoinsList");
 
 const uriValidate = addFormats(new Ajv()).compile(uriSchema);
+
+async function getBulkTokensByAddress(platform) {
+  const res = await axios.get(
+    `https://tokens.coingecko.com/${platform}/all.json`,
+    { timeout: 120000 }
+  );
+  if (!res.data || !res.data.tokens)
+    throw new Error(`Failed to fetch Coingecko's token list: ${platform}`);
+
+  const bulkTokensByAddress = new Map();
+  res.data.tokens.forEach((token) => {
+    try {
+      bulkTokensByAddress.set(getAddress(token.address), token);
+    } catch (error) {
+      // Skip invalid addresses
+    }
+  });
+  return bulkTokensByAddress;
+}
+
+// The bulk list links to thumbnails, the published lists use the small size
+function getSmallLogoURI(logoURI) {
+  if (!logoURI) return undefined;
+  const smallLogoURI = logoURI
+    .replace("https://assets.coingecko.com/", "https://coin-images.coingecko.com/")
+    .replace("/thumb/", "/small/");
+  return uriValidate(smallLogoURI) ? smallLogoURI : undefined;
+}
 
 module.exports = async function getEvmTokensFromCoingecko(
   networkId,
@@ -21,15 +46,7 @@ module.exports = async function getEvmTokensFromCoingecko(
   const platform = coingeckoPlatformFromNetworkId(networkId);
   const chainId = listStaticConfigs[networkId]?.chainId;
   if (!chainId) throw new Error("List static config or chainId is missing ");
-  const rpcEndpoint = listStaticConfigs[networkId]?.rpcEndpoint;
-  if (!rpcEndpoint)
-    throw new Error("List static config or rpcEndpoint is missing ");
-  const provider = new StaticJsonRpcProvider(
-    {
-      url: rpcEndpoint,
-    },
-    chainId
-  );
+  const bulkTokensByAddress = await getBulkTokensByAddress(platform);
 
   for (let i = 0; i < coinsList.length; i++) {
     const coin = coinsList[i];
@@ -48,41 +65,23 @@ module.exports = async function getEvmTokensFromCoingecko(
       continue;
     }
     if (tokensByAddress.get(address)) continue;
-    const coinDetailsResponse = await axios
-      .get(`https://api.coingecko.com/api/v3/coins/${coin.id}`, {
-        params: {
-          localization: false,
-          tickers: false,
-          market_data: false,
-          sparkline: false,
-        },
-      })
-      .catch(() => null);
-    await sleep(5000);
-    if (!coinDetailsResponse || !coinDetailsResponse.data) {
-        if (existingToken) tokensByAddress.set(address, existingToken);
-        continue;
+    const bulkToken = bulkTokensByAddress.get(address);
+    if (!bulkToken || !Number.isInteger(bulkToken.decimals)) {
+      if (existingToken) tokensByAddress.set(address, existingToken);
+      continue;
     }
-    const coinDetails = coinDetailsResponse.data;
-    let decimals =
-      coinDetails.detail_platforms?.[platform].decimal_place || null;
-    if (decimals === null) decimals = await getErc20Decimals(address, provider);
-    if (decimals === null) continue;
-    const isUriValid = uriValidate(coinDetails.image.small);
-    const logoURI = isUriValid ? coinDetails.image.small : undefined;
     const token = {
       chainId,
       address,
-      decimals,
-      name: coinDetails.name,
-      symbol: coinDetails.symbol.toUpperCase(),
-      logoURI,
+      decimals: bulkToken.decimals,
+      name: coin.name,
+      symbol: (coin.symbol || bulkToken.symbol).toUpperCase(),
+      logoURI: getSmallLogoURI(bulkToken.logoURI),
       extensions: {
-        coingeckoId: coinDetails.id,
+        coingeckoId: coin.id,
       },
     };
     tokensByAddress.set(address, token);
   }
-  await sleep(30000);
   return Array.from(tokensByAddress.values());
 };
