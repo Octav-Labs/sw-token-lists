@@ -59,7 +59,10 @@ module.exports = async function getTokensFromCoingecko(
       coinDetails.detail_platforms?.[platform].decimal_place || null;
     if (decimals === null)
       decimals = await getTokenDecimals(networkId, address);
-    if (decimals === null) continue;
+    if (decimals === null) {
+      if (existingToken) tokensByAddress.set(address, existingToken);
+      continue;
+    }
 
     const isUriValid = uriValidate(coinDetails.image.small);
     const logoURI = isUriValid ? coinDetails.image.small : undefined;

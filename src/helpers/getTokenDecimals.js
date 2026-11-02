@@ -27,7 +27,9 @@ async function getTokenDecimalsSui(address) {
     }),
   });
 
-  const coinMetadata = await client.getCoinMetadata({ coinType: address });
+  const coinMetadata = await client
+    .getCoinMetadata({ coinType: address })
+    .catch(() => null);
   if (coinMetadata) return coinMetadata.decimals;
   return null;
 }
