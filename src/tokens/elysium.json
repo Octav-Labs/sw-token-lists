@@ -36,6 +36,14 @@
   },
   {
     "chainId": 99901,
+    "address": "0x51C343Ed5131F17895991849860B61C2cb0E7e7a",
+    "decimals": 18,
+    "name": "Kleos",
+    "symbol": "KLEOS",
+    "logoURI": "https://3l7nlcmj1elkwe2g.public.blob.vercel-storage.com/flux/tokens/kleospfp-GV0xBUw0dPbb6sDnj6Lk1cywGQY6LI.jpg"
+  },
+  {
+    "chainId": 99901,
     "address": "0xe45a355d9e9cAd2aD85F2d03E3eE3102A036acF0",
     "decimals": 18,
     "name": "Kinetiq Governance Token",
