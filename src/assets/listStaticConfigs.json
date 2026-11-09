@@ -54,6 +54,14 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_none.png",
     "rpcEndpoint": "https://1rpc.io/cro"
   },
+  "elysium": {
+    "id": "elysium",
+    "name": "Elysium",
+    "addressType": "evm",
+    "chainId": 99901,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/102132321/large/elysium-logomark-light.png",
+    "rpcEndpoint": "https://rpc.elysium.kinetiq.xyz"
+  },
   "gnosis": {
     "id": "gnosis",
     "name": "Gnosis",

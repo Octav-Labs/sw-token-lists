@@ -15,6 +15,7 @@ This NPM module and GitHub repo contains SonarWatch's token lists.
 - [Bitcoin](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.bitcoin.tokenlist.json)
 - [BNB](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.bnb.tokenlist.json)
 - [Cronos](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.cronos.tokenlist.json)
+- [Elysium](https://github.com/Octav-Labs/sw-token-lists/releases/latest/download/sonarwatch.elysium.tokenlist.json)
 - [Ethereum](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.ethereum.tokenlist.json)
 - [Gnosis](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.gnosis.tokenlist.json)
 - [Linea](https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.linea.tokenlist.json)

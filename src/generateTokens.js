@@ -20,6 +20,7 @@ const tokenGenerators = {
   arbitrum: () => getEvmTokens("arbitrum"),
   base: () => getEvmTokens("base"),
   cronos: () => getEvmTokens("cronos"),
+  elysium: () => getEvmTokens("elysium"),
   gnosis: () => getEvmTokens("gnosis"),
   hyperevm: () => getEvmTokens("hyperevm"),
   linea: () => getEvmTokens("linea"),

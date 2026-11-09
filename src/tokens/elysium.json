@@ -1,0 +1,70 @@
+[
+  {
+    "chainId": 99901,
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "name": "Hyperliquid",
+    "symbol": "HYPE",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg",
+    "tags": ["native"],
+    "extensions": {
+      "coingeckoId": "hyperliquid"
+    }
+  },
+  {
+    "chainId": 99901,
+    "address": "0xbA876237B0F021A6c6D852d6c26E107997cC5E81",
+    "decimals": 18,
+    "name": "Wrapped HYPE",
+    "symbol": "WHYPE",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/54469/large/_UP3jBsi_400x400.jpg",
+    "tags": ["wnative"],
+    "extensions": {
+      "coingeckoId": "wrapped-hype"
+    }
+  },
+  {
+    "chainId": 99901,
+    "address": "0x248888D396A546A69A188f3Deb476964e581E9d0",
+    "decimals": 18,
+    "name": "Kinetiq Staked HYPE",
+    "symbol": "kHYPE",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/67388/large/khype.png",
+    "extensions": {
+      "coingeckoId": "kinetic-staked-hype"
+    }
+  },
+  {
+    "chainId": 99901,
+    "address": "0xe45a355d9e9cAd2aD85F2d03E3eE3102A036acF0",
+    "decimals": 18,
+    "name": "Kinetiq Governance Token",
+    "symbol": "KNTQ",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/70252/large/kntq.png",
+    "extensions": {
+      "coingeckoId": "kinetiq"
+    }
+  },
+  {
+    "chainId": 99901,
+    "address": "0xE9C29585EAe4B9a55b02a9605AEa892B40d972E8",
+    "decimals": 8,
+    "name": "Unit Bitcoin",
+    "symbol": "UBTC",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/55066/large/ubtc.jpg",
+    "extensions": {
+      "coingeckoId": "unit-bitcoin"
+    }
+  },
+  {
+    "chainId": 99901,
+    "address": "0x87E904A076fb98eEd283AE3e3410507ce95A9326",
+    "decimals": 6,
+    "name": "USDH",
+    "symbol": "USDH",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/69484/large/usdh.png",
+    "extensions": {
+      "coingeckoId": "usdh-2"
+    }
+  }
+]
