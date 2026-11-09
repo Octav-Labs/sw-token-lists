@@ -5,6 +5,7 @@ const platforms = {
   arbitrum: "arbitrum-one",
   base: "base",
   cronos: "cronos",
+  elysium: "elysium-kinetiq",
   gnosis: "xdai",
   hyperevm: "hyperevm",
   linea: "linea",

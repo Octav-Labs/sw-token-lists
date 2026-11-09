@@ -5,6 +5,7 @@ const bnbTokens = require("../tokens/bnb.json");
 const arbitrumTokens = require("../tokens/arbitrum.json");
 const baseTokens = require("../tokens/base.json");
 const cronosTokens = require("../tokens/cronos.json");
+const elysiumTokens = require("../tokens/elysium.json");
 const gnosisTokens = require("../tokens/gnosis.json");
 const hyperevmTokens = require("../tokens/hyperevm.json");
 const lineaTokens = require("../tokens/linea.json");
@@ -32,6 +33,7 @@ const lists = {
   arbitrum: arbitrumTokens,
   base: baseTokens,
   cronos: cronosTokens,
+  elysium: elysiumTokens,
   gnosis: gnosisTokens,
   hyperevm: hyperevmTokens,
   linea: lineaTokens,
