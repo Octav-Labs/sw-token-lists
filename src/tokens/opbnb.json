@@ -1,0 +1,26 @@
+[
+  {
+    "chainId": 204,
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "name": "BNB",
+    "symbol": "BNB",
+    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/BNB.png",
+    "tags": ["native"],
+    "extensions": {
+      "coingeckoId": "binancecoin"
+    }
+  },
+  {
+    "chainId": 204,
+    "address": "0x4200000000000000000000000000000000000006",
+    "decimals": 18,
+    "name": "Wrapped BNB",
+    "symbol": "WBNB",
+    "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/common/BNB.png",
+    "tags": ["wnative"],
+    "extensions": {
+      "coingeckoId": "wbnb"
+    }
+  }
+]

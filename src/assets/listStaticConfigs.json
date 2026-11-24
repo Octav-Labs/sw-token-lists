@@ -62,6 +62,14 @@
     "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/102132321/large/elysium-logomark-light.png",
     "rpcEndpoint": "https://rpc.elysium.kinetiq.xyz"
   },
+  "fraxtal": {
+    "id": "fraxtal",
+    "name": "Fraxtal",
+    "addressType": "evm",
+    "chainId": 252,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/193/large/fraxtal.jpeg",
+    "rpcEndpoint": "https://rpc.frax.com"
+  },
   "gnosis": {
     "id": "gnosis",
     "name": "Gnosis",
@@ -86,6 +94,22 @@
     "logoURI": "https://raw.githubusercontent.com/sonarwatch/token-lists/main/images/lists/sw_none.png",
     "rpcEndpoint": "https://1rpc.io/linea"
   },
+  "manta": {
+    "id": "manta",
+    "name": "Manta Pacific",
+    "addressType": "evm",
+    "chainId": 169,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/150/large/manta.png",
+    "rpcEndpoint": "https://pacific-rpc.manta.network/http"
+  },
+  "mode": {
+    "id": "mode",
+    "name": "Mode",
+    "addressType": "evm",
+    "chainId": 34443,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/191/large/mode.jpeg",
+    "rpcEndpoint": "https://mainnet.mode.network"
+  },
   "monad": {
     "id": "monad",
     "name": "Monad",
@@ -93,6 +117,14 @@
     "chainId": 143,
     "logoURI": "https://coin-images.coingecko.com/coins/images/38927/large/mon.png",
     "rpcEndpoint": "https://rpc.monad.xyz"
+  },
+  "opbnb": {
+    "id": "opbnb",
+    "name": "opBNB",
+    "addressType": "evm",
+    "chainId": 204,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/144/large/opbnb.png",
+    "rpcEndpoint": "https://opbnb-mainnet-rpc.bnbchain.org"
   },
   "scroll": {
     "id": "scroll",

@@ -6,10 +6,14 @@ const arbitrumTokens = require("../tokens/arbitrum.json");
 const baseTokens = require("../tokens/base.json");
 const cronosTokens = require("../tokens/cronos.json");
 const elysiumTokens = require("../tokens/elysium.json");
+const fraxtalTokens = require("../tokens/fraxtal.json");
 const gnosisTokens = require("../tokens/gnosis.json");
 const hyperevmTokens = require("../tokens/hyperevm.json");
 const lineaTokens = require("../tokens/linea.json");
+const mantaTokens = require("../tokens/manta.json");
+const modeTokens = require("../tokens/mode.json");
 const monadTokens = require("../tokens/monad.json");
+const opbnbTokens = require("../tokens/opbnb.json");
 const scrollTokens = require("../tokens/scroll.json");
 const zksyncTokens = require("../tokens/zksync.json");
 const polygonZkEvmTokens = require("../tokens/polygon-zkevm.json");
@@ -34,10 +38,14 @@ const lists = {
   base: baseTokens,
   cronos: cronosTokens,
   elysium: elysiumTokens,
+  fraxtal: fraxtalTokens,
   gnosis: gnosisTokens,
   hyperevm: hyperevmTokens,
   linea: lineaTokens,
+  manta: mantaTokens,
+  mode: modeTokens,
   monad: monadTokens,
+  opbnb: opbnbTokens,
   scroll: scrollTokens,
   zksync: zksyncTokens,
   "polygon-zkevm": polygonZkEvmTokens,
