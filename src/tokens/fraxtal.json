@@ -1,0 +1,275 @@
+[
+  {
+    "chainId": 252,
+    "address": "0x0000000000000000000000000000000000000000",
+    "decimals": 18,
+    "name": "Frax",
+    "symbol": "FRAX",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/13423/large/FRAX_icon.png",
+    "tags": ["native"],
+    "extensions": {
+      "coingeckoId": "frax-share"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xFc00000000000000000000000000000000000002",
+    "decimals": 18,
+    "name": "Wrapped Frax",
+    "symbol": "WFRAX",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/55432/large/wfrax_64.png",
+    "tags": ["wnative"],
+    "extensions": {
+      "coingeckoId": "wrapped-frax"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xdeBb8a79B025B2Fc2CA506F0c69497B60B91235C",
+    "decimals": 18,
+    "name": "Frax Doge",
+    "symbol": "FXD"
+  },
+  {
+    "chainId": 252,
+    "address": "0xc84c0f36e42D0100c6FF5e1D04e2978f0A5B63Cf",
+    "decimals": 18,
+    "name": "Real World Abs",
+    "symbol": "RWA",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/35798/small/_E-hXm9c_400x400.jpg?1709807509"
+  },
+  {
+    "chainId": 252,
+    "address": "0x4c0BD74Da8237c08840984Fdb33A84B4586aAEe6",
+    "decimals": 18,
+    "name": "VNX Euro",
+    "symbol": "VEUR",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/29351/small/VNXEUR_%281%29.png?1696528300"
+  },
+  {
+    "chainId": 252,
+    "address": "0x418126BB59457aFDbA1eCF376f97400B4157425D",
+    "decimals": 18,
+    "name": "VNX Franc",
+    "symbol": "VCHF",
+    "logoURI": "https://coin-images.coingecko.com/coins/images/29547/small/VNXCHF_%282%29.png?1696528488",
+    "extensions": {
+      "coingeckoId": "vnx-swiss-franc"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xaB4b7c5C9A7C8EbB97877085A6C3550ad4Ed3f97",
+    "decimals": 0,
+    "name": "FXTL Points",
+    "symbol": "FXTL",
+    "logoURI": "https://assets.coingecko.com/coins/images/35094/standard/fxs.jpeg?1707365050"
+  },
+  {
+    "chainId": 252,
+    "address": "0x2FC7447F6cF71f9aa9E7FF8814B37E55b268Ec91",
+    "decimals": 18,
+    "name": "Balancer",
+    "symbol": "BAL",
+    "logoURI": "https://assets.coingecko.com/coins/images/11683/standard/Balancer.png?1696511572",
+    "extensions": {
+      "coingeckoId": "balancer"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x331B9182088e2A7d6D3Fe4742AbA1fB231aEcc56",
+    "decimals": 18,
+    "name": "Curve DAO Token",
+    "symbol": "CRV",
+    "logoURI": "https://assets.coingecko.com/coins/images/12124/standard/Curve.png?1696511967",
+    "extensions": {
+      "coingeckoId": "curve-dao-token"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xEFb4B26FC242478c9008274F9e81db89Fa6adAB9",
+    "decimals": 18,
+    "name": "Convex FXS",
+    "symbol": "cvxFXS",
+    "logoURI": "https://assets.coingecko.com/coins/images/29001/standard/cvxfxs.png?1696527973",
+    "extensions": {
+      "coingeckoId": "convex-fxs"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x1509706a6c66CA549ff0cB464de88231DDBe213B",
+    "decimals": 18,
+    "name": "Aura",
+    "symbol": "AURA",
+    "logoURI": "https://assets.coingecko.com/coins/images/25942/standard/logo.png?1696525021",
+    "extensions": {
+      "coingeckoId": "aura-finance"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x7f9AdFbd38b669F03d1d11000Bc76b9AaEA28A81",
+    "decimals": 18,
+    "name": "Superchain Velodrome",
+    "symbol": "XVELO",
+    "logoURI": "https://raw.githubusercontent.com/SmolDapp/tokenAssets/main/tokens//252/0x7f9adfbd38b669f03d1d11000bc76b9aaea28a81/logo.svg",
+    "extensions": {
+      "coingeckoId": "velodrome-finance"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x5BD5c0cB9E4404C63526433BcBd6d133C1d73ffE",
+    "decimals": 18,
+    "name": "Ionic",
+    "symbol": "ION",
+    "logoURI": "https://assets.coingecko.com/coins/images/36713/standard/Ionic-icon-green.png?1712127547",
+    "extensions": {
+      "coingeckoId": "ionic-protocol"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xF1e2b576aF4C6a7eE966b14C810b772391e92153",
+    "decimals": 18,
+    "name": "FXB20291231",
+    "symbol": "FXB20291231",
+    "logoURI": "https://app.beefy.com/assets/FXB20251231-ef3f7395.svg"
+  },
+  {
+    "chainId": 252,
+    "address": "0xacA9A33698cF96413A40A4eB9E87906ff40fC6CA",
+    "decimals": 18,
+    "name": "FXB20251231",
+    "symbol": "FXB20251231",
+    "logoURI": "https://app.beefy.com/assets/FXB20251231-C_d1PPz5.svg"
+  },
+  {
+    "chainId": 252,
+    "address": "0x8e9C334afc76106F08E0383907F4Fca9bB10BA3e",
+    "decimals": 18,
+    "name": "FXB_4_DEC312026",
+    "symbol": "FXB_20261231",
+    "logoURI": "https://app.beefy.com/assets/FXB20251231-C_d1PPz5.svg"
+  },
+  {
+    "chainId": 252,
+    "address": "0x6EFB84bda519726Fa1c65558e520B92b51712101",
+    "decimals": 18,
+    "name": "IQ",
+    "symbol": "IQ",
+    "logoURI": "https://assets.coingecko.com/coins/images/5010/standard/YAIS3fUh.png?1696505542",
+    "extensions": {
+      "coingeckoId": "everipedia"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x4d15EA9C2573ADDAeD814e48C148b5262694646A",
+    "decimals": 6,
+    "name": "Tether USD",
+    "symbol": "USDT",
+    "logoURI": "https://assets.coingecko.com/coins/images/325/standard/Tether.png?1696501661",
+    "extensions": {
+      "coingeckoId": "tether"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xf6a011fAC307f55Cd4bA8e43b8b93f39808DdaA9",
+    "decimals": 18,
+    "name": "Dai Stablecoin",
+    "symbol": "DAI",
+    "logoURI": "https://assets.coingecko.com/coins/images/9956/standard/Badge_Dai.png?1696509996",
+    "extensions": {
+      "coingeckoId": "dai"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0xfb1520DbDc9230ef5dD5e6fd3Bbb6647B570E190",
+    "decimals": 6,
+    "name": "PayPal USD",
+    "symbol": "PYUSD",
+    "logoURI": "https://assets.coingecko.com/coins/images/31212/standard/PYUSD_Logo_%282%29.png?1696530039",
+    "extensions": {
+      "coingeckoId": "paypal-usd"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x09eAdcBAa812A4C076c3a6cDe765DC4a22E0d775",
+    "decimals": 18,
+    "name": "Savings Dai",
+    "symbol": "sDAI",
+    "logoURI": "https://assets.coingecko.com/coins/images/32254/standard/sdai.png?1697015278",
+    "extensions": {
+      "coingeckoId": "savings-dai"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x1AEe2382e05Dc68BDfC472F1E46d570feCca5814",
+    "decimals": 18,
+    "name": "Stake DAO FXS",
+    "symbol": "sdFXS",
+    "logoURI": "https://images.octav.fi/tokens/small/NoImageAvailable_small.png"
+  },
+  {
+    "chainId": 252,
+    "address": "0x748e54072189Ec8540cD58A078404ebFDc2aACeA",
+    "decimals": 18,
+    "name": "Wrapped liquid staked Ether 2.0",
+    "symbol": "wstETH",
+    "logoURI": "https://assets.coingecko.com/coins/images/18834/standard/wstETH.png?1696518295",
+    "extensions": {
+      "coingeckoId": "wrapped-steth"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x58adE43A276ddF3e101941571eDe398a32492Ed7",
+    "decimals": 18,
+    "name": "Pirex Ether OFT",
+    "symbol": "pxETH",
+    "logoURI": "https://images.octav.fi/tokens/small/NoImageAvailable_small.png"
+  },
+  {
+    "chainId": 252,
+    "address": "0xE162075a1C0Ac7e985253972bEcA5e83Da3BBaa4",
+    "decimals": 18,
+    "name": "Inception Restaked sfrxETH",
+    "symbol": "InsfrxETH",
+    "logoURI": "https://images.octav.fi/tokens/small/NoImageAvailable_small.png"
+  },
+  {
+    "chainId": 252,
+    "address": "0xaB94C721040b33aA8b0b4D159Da9878e2a836Ed0",
+    "decimals": 18,
+    "name": "Savings crvUSD",
+    "symbol": "scrvUSD",
+    "logoURI": "https://images.octav.fi/tokens/small/NoImageAvailable_small.png",
+    "extensions": {
+      "coingeckoId": "savings-crvusd"
+    }
+  },
+  {
+    "chainId": 252,
+    "address": "0x8301A2C86615Edf08d8980ECCca8287322423390",
+    "decimals": 18,
+    "name": "Wrapped FXB",
+    "symbol": "wFXB",
+    "logoURI": "https://app.beefy.com/assets/FXB20251231-C_d1PPz5.svg"
+  },
+  {
+    "chainId": 252,
+    "address": "0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83",
+    "decimals": 18,
+    "name": "FXB20551231",
+    "symbol": "FXB20551231",
+    "logoURI": "https://app.beefy.com/assets/FXB20251231-C_d1PPz5.svg"
+  }
+]

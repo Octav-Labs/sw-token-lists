@@ -6,6 +6,7 @@ const platforms = {
   base: "base",
   cronos: "cronos",
   elysium: "elysium-kinetiq",
+  fraxtal: "fraxtal",
   gnosis: "xdai",
   hyperevm: "hyperevm",
   linea: "linea",

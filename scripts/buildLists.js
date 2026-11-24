@@ -6,6 +6,7 @@ const arbitrumList = require("../build/sonarwatch.arbitrum.tokenlist.json");
 const baseList = require("../build/sonarwatch.base.tokenlist.json");
 const cronosList = require("../build/sonarwatch.cronos.tokenlist.json");
 const elysiumList = require("../build/sonarwatch.elysium.tokenlist.json");
+const fraxtalList = require("../build/sonarwatch.fraxtal.tokenlist.json");
 const gnosisList = require("../build/sonarwatch.gnosis.tokenlist.json");
 const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
@@ -34,6 +35,7 @@ const lists = {
   base: baseList,
   cronos: cronosList,
   elysium: elysiumList,
+  fraxtal: fraxtalList,
   gnosis: gnosisList,
   hyperevm: hyperevmList,
   linea: lineaList,

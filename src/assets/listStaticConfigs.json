@@ -62,6 +62,14 @@
     "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/102132321/large/elysium-logomark-light.png",
     "rpcEndpoint": "https://rpc.elysium.kinetiq.xyz"
   },
+  "fraxtal": {
+    "id": "fraxtal",
+    "name": "Fraxtal",
+    "addressType": "evm",
+    "chainId": 252,
+    "logoURI": "https://coin-images.coingecko.com/asset_platforms/images/193/large/fraxtal.jpeg",
+    "rpcEndpoint": "https://rpc.frax.com"
+  },
   "gnosis": {
     "id": "gnosis",
     "name": "Gnosis",
