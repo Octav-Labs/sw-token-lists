@@ -10,7 +10,10 @@ const fraxtalList = require("../build/sonarwatch.fraxtal.tokenlist.json");
 const gnosisList = require("../build/sonarwatch.gnosis.tokenlist.json");
 const hyperevmList = require("../build/sonarwatch.hyperevm.tokenlist.json");
 const lineaList = require("../build/sonarwatch.linea.tokenlist.json");
+const mantaList = require("../build/sonarwatch.manta.tokenlist.json");
+const modeList = require("../build/sonarwatch.mode.tokenlist.json");
 const monadList = require("../build/sonarwatch.monad.tokenlist.json");
+const opbnbList = require("../build/sonarwatch.opbnb.tokenlist.json");
 const scrollList = require("../build/sonarwatch.scroll.tokenlist.json");
 const zksyncList = require("../build/sonarwatch.zksync.tokenlist.json");
 const polygonZkEvmList = require("../build/sonarwatch.polygon-zkevm.tokenlist.json");
@@ -39,7 +42,10 @@ const lists = {
   gnosis: gnosisList,
   hyperevm: hyperevmList,
   linea: lineaList,
+  manta: mantaList,
+  mode: modeList,
   monad: monadList,
+  opbnb: opbnbList,
   scroll: scrollList,
   zksync: zksyncList,
   "polygon-zkevm": polygonZkEvmList,

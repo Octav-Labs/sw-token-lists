@@ -2,7 +2,7 @@ const { default: axios } = require("axios");
 
 module.exports = async function getTokensFromCurrentList(networkId) {
   // temp till we have a list
-  if (networkId === "fraxtal") return [];
+  if (["fraxtal", "manta", "mode", "opbnb"].includes(networkId)) return [];
 
   let currentList = await axios
     .get(
